@@ -353,6 +353,7 @@ PRODUCT_PACKAGES += \
     NTSettingsProviderResTarget \
     NTSettingsResTarget \
     NTSystemUIResTarget \
+    NTPixelSetupWizardResTarget \
     NTWifiResTarget
 
 # Project ID Quota
