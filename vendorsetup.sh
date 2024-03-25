@@ -39,4 +39,4 @@ git fetch https://github.com/Nothing-phone-2-Development/android_device_qcom_sep
 git cherry-pick 7cd972ffc847631f0a892e4d13eb1def59982268
 cd ../../../../
 
-echo 'Done and Completed'
+echo 'Done and Complete'
