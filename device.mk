@@ -195,6 +195,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.recovery.rc \
     init.qcom.sh \
+    init.sim.restart.sh \
     init.target.rc \
     ueventd.nt.rc \
     ueventd.qcom.rc
