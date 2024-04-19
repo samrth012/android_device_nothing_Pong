@@ -61,3 +61,10 @@ on property:sys.boot_completed=1
 
 on property:sys.boot_completed=1
     swapon_all /vendor/etc/fstab.zram
+    start sim-restart
+
+service sim-restart /system/bin/init.sim.restart.sh
+    user root
+    class main
+    oneshot
+    disabled
