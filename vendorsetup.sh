@@ -3,6 +3,7 @@ echo 'Starting vendorsetup processes needed for your device'
 # Stuffs to rm -rf
 rm -rf hardware/qcom-caf/sm8450/display
 rm -rf device/qcom/sepolicy_vndr/sm8450
+rm -rf packages/apps/ParanoidGlyph
 
 echo 'Cloning Vendor tree [1/5]'
 # vendor/nothing/Pong
@@ -30,6 +31,6 @@ echo 'DONE'
 
 echo 'Cloning PAGlyph Repo [5/5]'
 # packages/apps/ParanoidGlyph
-git clone https://github.com/PongxViolet/android_packages_apps_ParanoidGlyph.git packages/apps/ParanoidGlyph
+git clone https://github.com/ProjectGhostOS/android_packages_apps_ParanoidGlyph.git packages/apps/ParanoidGlyph
 
 echo 'Done and Completed'
