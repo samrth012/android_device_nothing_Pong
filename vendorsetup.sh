@@ -1,6 +1,7 @@
 echo 'Starting vendorsetup processes needed for your device'
 
 # Stuffs to rm -rf
+rm -rf kernel/nothing/sm8475
 rm -rf hardware/qcom-caf/sm8450/display
 rm -rf device/qcom/sepolicy_vndr/sm8450
 rm -rf packages/apps/ParanoidGlyph
@@ -13,7 +14,7 @@ echo 'DONE'
 
 echo 'Cloning Kernel tree [2/5]'
 # kernel/nothing/sm8475
-git clone --depth=1 https://github.com/HELLBOY017/kernel_nothing_sm8475.git -b inline kernel/nothing/sm8475
+git clone --depth=1 https://github.com/HELLBOY017/kernel_nothing_sm8475.git -b inline kernel/nothing/sm8475 && cd kernel/nothing/sm8475 && git submodule init && git submodule update --remote && cd ../../..
 
 echo 'DONE'
 
