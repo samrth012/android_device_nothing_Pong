@@ -103,7 +103,6 @@ pci-msm-drv.ko
 camcc-waipio.ko
 videocc-waipio.ko
 gpucc-waipio.ko
-debugcc-waipio.ko
 bam_dma.ko
 gpi.ko
 pci-edma.ko
@@ -259,7 +258,6 @@ gh_virtio_backend.ko
 qcom-spmi-adc5.ko
 qcom-vadc-common.ko
 nvmem_qfprom.ko
-qnoc-parrot.ko
 nothing_bootloader_log.ko
 nothing_restart_handler.ko
 nothing_task_meminfo.ko
@@ -268,11 +266,6 @@ simulated_ntc.ko
 slimbus.ko
 slim-qcom-ngd-ctrl.ko
 hwmon.ko
-stm_core.ko
-stm_p_basic.ko
-stm_p_ost.ko
-stm_console.ko
-stm_ftrace.ko
 snd-usb-audio-qmi.ko
 qrtr-smd.ko
 qrtr-mhi.ko
