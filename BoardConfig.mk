@@ -114,6 +114,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 TARGET_KERNEL_SOURCE := kernel/nothing/sm8475
 TARGET_KERNEL_CONFIG := vendor/meteoric_defconfig 
+TARGET_KERNEL_CLANG_VERSION := r487747c
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist
