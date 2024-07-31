@@ -16,12 +16,9 @@ git clone --depth=1 https://github.com/samrth012/kernel_nothing_sm8475-meteoric.
 
 echo 'DONE'
 
-echo 'Picking Display Hal commit [3/6]'
+echo 'Cloning Display Hal [3/6]'
 # hardware/qcom-caf/sm8450/display
-cd hardware/qcom-caf/sm8450/display
-git fetch https://github.com/Nothing-phone-2-Development/android_hardware_qcom_display.git 
-git cherry-pick 6ad257ed6fdedaf63ec6378559eb88c6013de80d
-cd ../../../../
+git clone https://github.com/Nothing-phone-2-Development/android_hardware_qcom_display.git hardware/qcom-caf/sm8450/display
 
 echo 'DONE'
 
