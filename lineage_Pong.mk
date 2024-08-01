@@ -44,7 +44,7 @@ BUILD_FINGERPRINT := Nothing/Pong/Pong:12/SKQ1.230722.001/2406280430:user/releas
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 #Flags
-PRODUCT_NO_CAMERA := true
+PRODUCT_NO_CAMERA := false
 TARGET_ENABLE_BLUR := true
 WITH_GMS := true
 TARGET_HAS_UDFPS := true
