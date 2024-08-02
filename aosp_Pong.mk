@@ -11,10 +11,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Pong device
 $(call inherit-product, device/nothing/Pong/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common ROM stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_Pong
+# Bootanimation Resolution.
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Device identifier. This must come after all inclusions.
+PRODUCT_NAME := aosp_Pong
 PRODUCT_DEVICE := Pong
 PRODUCT_MANUFACTURER := nothing
 PRODUCT_BRAND := Nothing
@@ -30,15 +34,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=Pong \
     DeviceProduct=A065 \
     SystemDevice=Pong \
-    SystemName=Pong \
-    RisingChipset="taro" \
-    RisingMaintainer="Samrth"
+    SystemName=Pong 
 
-#Flags
-PRODUCT_NO_CAMERA := false
-TARGET_ENABLE_BLUR := true
+# Flags
 TARGET_HAS_UDFPS := true
-EXTRA_UDFPS_ANIMATIONS := true
-TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
-WITH_GMS := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
+TARGET_ENABLE_BLUR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_CALL_RECORDING_SUPPORTED := true
