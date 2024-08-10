@@ -12,7 +12,7 @@ echo 'DONE'
 
 echo 'Cloning Kernel tree [2/6]'
 # kernel/nothing/sm8475
-git clone --depth=1 https://github.com/samrth012/kernel_nothing_sm8475-meteoric.git -b inline kernel/nothing/sm8475 
+git clone --depth=1 https://github.com/samrth012/kernel_nothing_sm8475-meteoric.git -b inline kernel/nothing/sm8475 && cd kernel/nothing/sm8475 && git submodule init && git submodule update --remote && cd ../../..
 
 echo 'DONE'
 
