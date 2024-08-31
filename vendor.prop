@@ -112,12 +112,6 @@ persist.vendor.dpm.vndr.feature=11
 persist.vendor.dpm.vndr.halservice.enable=1
 persist.vendor.dpm.vndr.idletimer.mode=default
 
-# Dirac
-persist.vendor.newdirac.cur.config=MUSIC
-persist.vendor.newdirac.dump=0
-persist.vendor.newdirac.enable.value=1.000000
-persist.vendor.newdirac.volume.value=0.000000
-
 # Display
 persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
