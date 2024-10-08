@@ -50,7 +50,6 @@ on post-fs-data
     # Enable WLAN SSR
     write /sys/kernel/cnss/recovery 1
 
-
 service sim-restart /system/bin/init.sim.restart.sh
     class main
     user root
@@ -59,3 +58,6 @@ service sim-restart /system/bin/init.sim.restart.sh
 
 on property:sys.boot_completed=1
     start sim-restart
+
+on property:sys.boot_completed=1
+    swapon_all /vendor/etc/fstab.zram
