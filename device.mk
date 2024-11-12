@@ -56,6 +56,7 @@ PRODUCT_PACKAGES += \
     libdownmix \
     libdynproc \
     libeffectproxy \
+    libfmpal \
     libhfp_pal \
     libqcompostprocbundle \
     libqcomvisualizer \
