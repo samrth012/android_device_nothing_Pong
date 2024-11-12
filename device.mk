@@ -318,7 +318,9 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    kernel/nothing/sm8475 \
+    kernel/nothing/sm8475-modules
 
 # Telephony
 PRODUCT_PACKAGES += \
