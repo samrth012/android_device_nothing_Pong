@@ -236,12 +236,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
-# Nothing-fwk
-PRODUCT_PACKAGES += \
-    nothing-fwk
-
-PRODUCT_BOOT_JARS += \
-    nothing-fwk
+# Nt-fwk
+$(call inherit-product, hardware/nothing/nt-fwk/nt-fwk.mk)
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -250,13 +246,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 # QSSI overlays
-PRODUCT_PACKAGES += \
-    CarrierConfigResCommon \
-    FrameworksResCommon \
-    NTWifiResCommon \
-    SystemUIResCommon \
-    TelephonyResCommon \
-    WifiResCommon
+$(call inherit-product, hardware/nothing/overlay/qssi/qssi.mk)
 
 # TARO overlays
 PRODUCT_PACKAGES += \
@@ -296,7 +286,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.nt-multihal \
-    sensors.nothing
+    sensors.nt
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
@@ -320,6 +310,7 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/nothing \
     kernel/nothing/sm8475 \
     kernel/nothing/sm8475-modules
 
