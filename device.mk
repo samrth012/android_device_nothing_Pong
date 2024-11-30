@@ -239,6 +239,10 @@ PRODUCT_COPY_FILES += \
 # Nt-fwk
 $(call inherit-product, hardware/nothing/nt-fwk/nt-fwk.mk)
 
+# Nt-glyph
+PRODUCT_PACKAGES += \
+    PongGlyph
+
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
