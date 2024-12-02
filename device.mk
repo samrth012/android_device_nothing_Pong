@@ -152,11 +152,6 @@ PRODUCT_COPY_FILES += \
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
 
-# Dolby Effects Props
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.audio.delta.refresh=true \
-    ro.vendor.audio.dolby.surround.enable=true
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
@@ -249,7 +244,11 @@ PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/codec2/service/1.0/c2audio.vendor.ext-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/media_codecs_cape_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_cape_vendor.xml
+    $(LOCAL_PATH)/audio/media_codecs_cape_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_cape_vendor.xml 
+
+# Dolby VNDK libs
+PRODUCT_PACKAGES += \
+    libstagefright_foundation-v33
 
 PRODUCT_PACKAGES += \
     libavservices_minijail \
