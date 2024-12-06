@@ -34,8 +34,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=A065 \
     SystemDevice=Pong \
     SystemName=Pong \
-    RISING_CHIPSET="taro" \
-    RISING_MAINTAINER="Samrth"
+    RisingChipset="taro" \
+    RisingMaintainer="Samrth"
+
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Nothing/Pong/Pong:12/SKQ1.230722.001/2408281751:user/release-keys
@@ -46,8 +47,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-nothing
 #Flags
 PRODUCT_NO_CAMERA := false
 TARGET_ENABLE_BLUR := true
-WITH_GMS := true
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
 TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+WITH_GMS := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
