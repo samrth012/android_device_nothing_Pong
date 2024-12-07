@@ -59,6 +59,7 @@ public:
     LedVibratorDevice();
     int on(int32_t timeoutMs);
     int off();
+    int setAmplitude(float amplitude);
     bool mDetected;
     int32_t mTimeoutMs;
     int32_t mLevel;

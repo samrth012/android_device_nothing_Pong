@@ -353,6 +353,12 @@ LedVibratorDevice::LedVibratorDevice() {
 int LedVibratorDevice::write_value(const char *file, const char *value) {
     int fd;
     int ret;
+    int val = 80;
+
+    if (!strcmp(file, LED_DEVICE "/gain")) {
+        val = mLevel * strtoul(value, NULL, 0) / 3;
+	value = std::to_string(val).c_str();
+    }
 
     fd = TEMP_FAILURE_RETRY(open(file, O_WRONLY));
     if (fd < 0) {
@@ -438,7 +444,7 @@ int LedVibratorDevice::setAmplitude(float amplitude) {
         ret |= write_value(LED_DEVICE "/gain", "0x80");
         ret |= write_value(LED_DEVICE "/brightness", "1");
     }
-                  
+
     return ret;
 }
 
@@ -455,10 +461,7 @@ int LedVibratorDevice::off()
 ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
     *_aidl_return = IVibrator::CAP_ON_CALLBACK;
 
-    if (ledVib.mDetected) {
-        ALOGD("QTI Vibrator reporting capabilities: %d", *_aidl_return);
-        return ndk::ScopedAStatus::ok();
-    }
+    *_aidl_return |= IVibrator::CAP_AMPLITUDE_CONTROL;
 
     if (ff.mSupportEffects)
         *_aidl_return |= IVibrator::CAP_PERFORM_CALLBACK;
@@ -517,6 +520,21 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
     ALOGD("Vibrator perform effect %d", effect);
 
     if (ledVib.mDetected) {
+	switch (es) {
+            case EffectStrength::LIGHT:
+                ledVib.mLevel = 1;
+                break;
+            case EffectStrength::MEDIUM:
+                ledVib.mLevel = 2;
+                break;
+            case EffectStrength::STRONG:
+                ledVib.mLevel = 3;
+                break;
+	    default:
+		ledVib.mLevel = 3;
+		break;
+        }
+
         switch (effect) {
             case Effect::CLICK:
                 ledVib.write_value(LED_DEVICE "/duration", "10");
@@ -629,10 +647,14 @@ ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
     uint8_t tmp;
     int ret;
 
-    if (ledVib.mDetected)
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
-
     ALOGD("Vibrator set amplitude: %f", amplitude);
+
+    if (ledVib.mDetected) {
+        ret = ledVib.setAmplitude(amplitude);
+        if (ret != 0)
+            return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
+        return ndk::ScopedAStatus::ok();
+    }
 
     if (amplitude <= 0.0f || amplitude > 1.0f)
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_ILLEGAL_ARGUMENT));
