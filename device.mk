@@ -57,7 +57,6 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libsndcardparser \
-    libtinycompress \
     libvolumelistener \
     vendor.qti.hardware.AGMIPC@1.0-service \
     vendor.qti.hardware.pal@1.0-impl
@@ -216,7 +215,6 @@ PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail \
     libpalclient
 
 # NFC
