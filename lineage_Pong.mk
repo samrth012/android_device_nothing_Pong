@@ -30,4 +30,18 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=Pong \
     DeviceProduct=A065 \
     SystemDevice=Pong \
-    SystemName=Pong
+    SystemName=Pong \
+    RisingChipset="taro" \
+    RisingMaintainer="Samrth"
+
+# GMS
+PRODUCT_GMS_CLIENTID_BASE := android-nothing
+
+#Flags
+PRODUCT_NO_CAMERA := false
+TARGET_ENABLE_BLUR := true
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+WITH_GMS := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
