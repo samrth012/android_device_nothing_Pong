@@ -148,6 +148,9 @@ vendor.gralloc.disable_ubwc=0
 # DRM
 drm.service.enabled=true
 
+# Droidx
+ro.droidx.maintainer=samrth012
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
